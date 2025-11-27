@@ -10,9 +10,7 @@ Nov 2025
 #include "si5351.h"
 #include "Wire.h"
 #define SI5351_REF 25002650UL
-
 Si5351 si5351;
-
 unsigned long long freq  = 14414500000ULL; 
 
 void setup() {
@@ -24,17 +22,12 @@ si5351.drive_strength(SI5351_CLK0, SI5351_DRIVE_2MA);
 void loop() {
     if (Serial.available()) {
   unsigned long input=Serial.parseInt();  // Read until newline
- freq = input*1000;
-     freq=freq*100;
-     si5351.set_freq(freq, SI5351_CLK0);     
+  freq = input*1000;
+  freq=freq*100;
+  si5351.set_freq(freq, SI5351_CLK0);     
   si5351.output_enable(SI5351_CLK0, 1);           
   delay(5000);
   si5351.output_enable(SI5351_CLK0, 0); // Disable the output
-  //delay(1000);
-
-    input = "";
-    freq="";
-
-  }
- 
-}
+  input = "";
+  freq="";  }
+ }
