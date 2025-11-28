@@ -1,6 +1,6 @@
 # RSPDuoEME-Calibrator-Si5351
 Original RSPduoEME software calibrator for the SDR Play RSPDuo by Dave Warwick G4EEV (https://www.qsl.net/g4eev/calibrator.html), calls for ADF 4351 Wideband Synthesizer by F1CJN (http://f6kbf.free.fr/html/ADF4351%20and%20Arduino_Fr_Gb.htm). 
-This sketch provides for use of Skyworks Si5351 I2C programable CMOS clock generator. Here is the Skyworks description:
+This sketch provides for use of Skyworks Si5351 I2C programmable CMOS clock generator. Here is the Skyworks description:
 "The Si5351 is an I2C configurable clock generator that is ideally suited for replacing crystals, crystal oscillators, VCXOs, phase-locked loops (PLLs), and fanout buffers in cost-sensitive applications. Based on a PLL/VCXO + high resolution MultiSynth fractional divider architecture, the Si5351 can generate any frequency up to 200 MHz on each of its outputs with 0 ppm error."
 
 Items user needs to ensure are correct:
