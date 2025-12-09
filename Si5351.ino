@@ -30,4 +30,6 @@ void loop() {
   si5351.output_enable(SI5351_CLK0, 0); // Disable the output
   input ="";
   freq="";  }
+  delay(200);
+  Serial.flush();
  }
