@@ -21,15 +21,15 @@ si5351.drive_strength(SI5351_CLK0, SI5351_DRIVE_2MA);
 
 void loop() {
     if (Serial.available()) {
-  unsigned long input=Serial.parseInt(); // Read from RSPDuoEME
+        Serial.flush();
+  unsigned long input=0UL;
+  input=Serial.parseInt(); 
   freq = input*1000;
-  freq=freq*100;
+  freq = freq*100;
   si5351.set_freq(freq, SI5351_CLK0);     
   si5351.output_enable(SI5351_CLK0, 1);           
   delay(5000);
   si5351.output_enable(SI5351_CLK0, 0); // Disable the output
-  input ="";
-  freq="";  }
+   }
   delay(200);
-  Serial.flush();
  }
