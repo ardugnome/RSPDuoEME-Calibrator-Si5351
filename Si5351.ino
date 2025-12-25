@@ -29,7 +29,5 @@ void loop() {
   si5351.set_freq(freq, SI5351_CLK0);     
   si5351.output_enable(SI5351_CLK0, 1);           
   delay(5000);
-  si5351.output_enable(SI5351_CLK0, 0); // Disable the output
    }
-  delay(200);
  }
