@@ -13,7 +13,8 @@ Items user needs to ensure are correct:
 	
   #4 In the RSPduoEME choose the serial port associated with the Arduino connected to the Si5351 module and check "Auto Calibration"
 	
-The RSPduoEME program outputs the frequency which is processed by the Arduino. The Si5351 module is turned on and the correct tuning frequency is generated for five (5) seconds after which the Arduino turns off the Si5351 module and clears the buffer.
+The RSPduoEME program outputs the frequency which is processed by the Arduino. The Si5351 module is turned on and the correct tuning frequency is generated for five (5) seconds after which the Arduino turns off the Si5351 module.
+In that time, you need to click on the "Set" button of the software so that the staring phase between the two receivers is aligned properly.
 Assumptions:
 RSPDuoEME-Calibrator-Si5351 is turned on every time there is a need for calibration of the SDR Play unit, which is essentially every time you start it.
 More information here: https://www.qsl.net/g4eev/index.html
