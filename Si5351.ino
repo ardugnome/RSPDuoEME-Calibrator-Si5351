@@ -14,14 +14,18 @@ Si5351 si5351;
 unsigned long long freq  = 14414500000ULL; 
 
 void setup() {
-  Serial.begin(9600,SERIAL_8N2);
+Serial.end();
+delay(300);
+Serial.begin(9600,SERIAL_8N2);
 si5351.drive_strength(SI5351_CLK0, SI5351_DRIVE_2MA); 
-  si5351.init(SI5351_CRYSTAL_LOAD_8PF, SI5351_REF, 0);          
+si5351.init(SI5351_CRYSTAL_LOAD_8PF, SI5351_REF, 0);     
+delay(300);
+Serial.begin(9600,SERIAL_8N2);  
 }
 
 void loop() {
     if (Serial.available()) {
-        Serial.flush();
+  Serial.flush();
   unsigned long input=0UL;
   input=Serial.parseInt(); 
   freq = input*1000;
@@ -29,5 +33,6 @@ void loop() {
   si5351.set_freq(freq, SI5351_CLK0);     
   si5351.output_enable(SI5351_CLK0, 1);           
   delay(5000);
+  si5351.output_enable(SI5351_CLK0, 0); // Disable the output
    }
  }
